@@ -23,3 +23,7 @@ There is no existing history, so start with Conventional Commits (`feat: add dep
 
 ## CI/CD Notes
 The primary automation belongs in `.github/workflows/ci.yml`; update it whenever you add or rename quality gates. Use encrypted repository secrets for credentials and provide mocked fallbacks for local testing. Do not commit `.env` files or cloud keys, and document any new pipeline stage in this guide before landing it.
+
+The default CI pipeline contains two jobs:
+- Backend Tests: sets up Python 3.11, installs `backend/requirements.txt`, and runs `pytest -q` from the `backend` directory.
+- Frontend Lint & Build: depends on the backend job, installs Node.js 20, runs `npm ci`, then executes `npm run lint` and `npm run build` inside `frontend`.
