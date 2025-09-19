@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hello World",
-  description: "Simple Next.js page with Tailwind CSS"
+  title: "Frontend App",
+  description: "Simple Next.js page powered by a FastAPI backend"
 };
 
 export default function RootLayout({
